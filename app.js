@@ -5,4 +5,14 @@ const ligne = document.querySelector(".cont-ligne");
 
 btnMenu.addEventListener("click", () => {
   ligne.classList.toggle("active");
+  nav.classList.toggle("menu-visible");
 });
+
+if (window.matchMedia("(max-width: 1300px)").matches) {
+  allItemNav.forEach((item) => {
+    item.addEventListener("click", () => {
+      nav.classList.toggle("menu-visible");
+      ligne.classList.toggle("active");
+    });
+  });
+}
