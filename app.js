@@ -16,3 +16,39 @@ if (window.matchMedia("(max-width: 1300px)").matches) {
     });
   });
 }
+
+//Animation ecriture
+
+const textAnim = document.querySelector(".txt-animation");
+let typewriter = new Typewriter(textAnim, {
+  loop: false,
+  deleteSpeed: 20,
+});
+
+typewriter
+  .pauseFor(1800)
+  .changeDelay(20)
+  .typeString("Moi c'est Thibault Carrera, ")
+  .pauseFor(300)
+  .typeString("<strong> Développeur Full-Stack !<strong>")
+  .pauseFor(1000)
+  .deleteChars(13)
+  .typeString("<span style='color: #059ef7; font-weight: bold;'> CSS</span> !")
+  .pauseFor(1000)
+  .deleteChars(5)
+  .typeString(
+    "<span style='color: #f7d705; font-weight: bold;'> JavaScript</span> !"
+  )
+  .pauseFor(1000)
+  .deleteChars(12)
+  .typeString("<span style='color: #484778; font-weight: bold;'> PHP</span> !")
+  .pauseFor(1000)
+  .deleteChars(5)
+  .typeString(
+    "<span style='color: #27ae60; font-weight: bold;'> Symfony</span> !"
+  )
+  .pauseFor(1000)
+  .deleteChars(9)
+  .typeString("<span style='font-weight: bold;'> Full-Stack</span> !")
+
+  .start();
