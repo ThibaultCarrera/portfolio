@@ -52,3 +52,18 @@ typewriter
   .typeString("<span style='font-weight: bold;'> Full-Stack</span> !")
 
   .start();
+
+//Animation Contact
+
+const input_fields = document.querySelectorAll("input");
+
+for (let i = 0; i < input_fields.length; i++) {
+  let fields = input_fields[i];
+  fields.addEventListener("input", (e) => {
+    if (e.target.value !== "") {
+      e.target.parentNode.classList.add("animation");
+    } else if (e.target.value == "") {
+      e.target.parentNode.classList.remove("animation");
+    }
+  });
+}
