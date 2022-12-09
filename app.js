@@ -67,3 +67,28 @@ for (let i = 0; i < input_fields.length; i++) {
     }
   });
 }
+
+//Animation GSAP + ScrollMagic
+
+const navbar = document.querySelector(".nav-gauche");
+const titre = document.querySelector("h1");
+const btn = document.querySelectorAll(".btn-acc");
+const btnMedias = document.querySelectorAll(".media");
+const btnRondAccueil = document.querySelector(".btn-rond");
+
+const TL1 = gsap.timeline({ paused: true });
+
+TL1.to(navbar, { left: "0px", duration: 0.6, ease: Power3.easeOut })
+  .from(titre, { y: -50, opacity: 0, duration: 0.4, ease: Power3.easeOut })
+  .staggerFrom(btn, 1, { opacity: 0 }, 0.2, "-=0.3")
+  .staggerFrom(btnMedias, 1, { opacity: 0 }, 0.2, "-=0.75")
+  .from(btnRondAccueil, {
+    y: -50,
+    opacity: 0,
+    duration: 0.4,
+    ease: Power3.easeOut,
+  });
+
+window.addEventListener("load", () => {
+  TL1.play();
+});
